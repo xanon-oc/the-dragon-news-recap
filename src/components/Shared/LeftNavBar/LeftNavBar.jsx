@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const LeftNavBar = () => {
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5200/categories")
+      .then((res) => res.json())
+      .then((data) => setCategories(data))
+      .catch((error) => console.error(error.message));
+  }, []);
   return (
     <div>
-      <h2>This is the left nav bar</h2>
+      {categories.map((category) => (
+        <p key={category.id}>
+          <Link to={`/categories/${category.id}`}>{category.name}</Link>
+        </p>
+      ))}
     </div>
   );
 };
