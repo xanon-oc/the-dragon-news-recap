@@ -1,0 +1,20 @@
+nav a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 18px;
+  color: #706f6f;
+  margin-right: 20px;
+}
+.active {
+  color: goldenrod;
+}
+.btn-login {
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+}
+:hover.btn-login {
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+}
